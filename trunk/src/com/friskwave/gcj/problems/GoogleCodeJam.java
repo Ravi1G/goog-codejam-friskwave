@@ -93,6 +93,16 @@ abstract public class GoogleCodeJam{
 	public void setNoOfLinesPerUseCase(int noOfLinesPerUseCase) {
 		this.noOfLinesPerUseCase = noOfLinesPerUseCase;
 	}
+	
+	/**
+	 * @author Parth Arora
+	 * @email arora.parth@gmail.com
+	 * 
+	 * @desc This method is supposed to populate the useCaseListObject for further computation to take place
+	 * @param fileData
+	 * @param noOfLinesPerGroup
+	 */
+	abstract public void formatUseCases(List<String> fileData, int noOfLinesPerUseCase);
 
 	/**
 	 * @author Parth Arora
@@ -103,17 +113,4 @@ abstract public class GoogleCodeJam{
 	 * @return output result string in google code jam output format for the computed case
 	 */
 	abstract public String computeIndividualCase(Object caseData);
-	
-	/**
-	 * @author Parth Arora
-	 * @email arora.parth@gmail.com
-	 * 
-	 * @desc This method is supposed to populate the useCaseListObject for further computation to take place
-	 * @param fileData
-	 * @param noOfLinesPerGroup
-	 */
-	public void formatUseCases(List<String> fileData, int noOfLinesPerUseCase){
-		
-		
-	}
 }
