@@ -14,7 +14,7 @@ import com.friskwave.utils.LoggerUtil;
  * @author Parth Arora
  * @email arora.parth@gmail.com
  * @desc This is a solution to google code jam problem.
- * The problem URL is https://code.google.com/codejam/contest/351101/dashboard#s=p1
+ * The problem definition URL is https://code.google.com/codejam/contest/351101/dashboard#s=p1
  */
 public class ReverseWords extends GoogleCodeJam {
 	

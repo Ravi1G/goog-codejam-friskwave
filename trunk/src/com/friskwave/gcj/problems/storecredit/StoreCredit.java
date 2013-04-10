@@ -17,7 +17,7 @@ import com.friskwave.utils.LoggerUtil;
  * @author Parth Arora
  * @email arora.parth@gmail.com
  * @desc This is a solution to google code jam problem.
- * The problem URL is https://code.google.com/codejam/contest/351101/dashboard#s=p0
+ * The problem definition URL is https://code.google.com/codejam/contest/351101/dashboard#s=p0
  */
 public class StoreCredit extends GoogleCodeJam {
 	
@@ -28,6 +28,11 @@ public class StoreCredit extends GoogleCodeJam {
 		super();
 	}
 	
+	public StoreCredit(String inputFilePath, String outputFilePath){
+		
+		super(inputFilePath, outputFilePath);
+	}
+	
 	public StoreCredit(String inputFilePath, String outputFilePath, int noOfLinesPerUseCase){
 		
 		super(inputFilePath, outputFilePath, noOfLinesPerUseCase);
@@ -36,15 +41,10 @@ public class StoreCredit extends GoogleCodeJam {
 	@Override
 	public String computeIndividualCase(Object caseData){
 		
-		int caseNumber;
-		int caseCredit;
-		int currentItemCount;
-		String[] currentItemPriceList;
-		
-		caseNumber = ((StoreCreditDomain) caseData).getCaseNumber();
-		caseCredit = ((StoreCreditDomain) caseData).getCreditAvailable();
-		currentItemCount = ((StoreCreditDomain) caseData).getStoreItemCount();
-		currentItemPriceList = ((StoreCreditDomain) caseData).getItemPriceList().split(" ");
+		int caseNumber = ((StoreCreditDomain) caseData).getCaseNumber();
+		int caseCredit = ((StoreCreditDomain) caseData).getCreditAvailable();
+		int currentItemCount = ((StoreCreditDomain) caseData).getStoreItemCount();
+		String[] currentItemPriceList = ((StoreCreditDomain) caseData).getItemPriceList().split(" ");
 		
 		List<StoreCreditItemDomain> alCIP_Asc = new ArrayList<StoreCreditItemDomain>();
 		List<StoreCreditItemDomain> alCIP_Desc = new ArrayList<StoreCreditItemDomain>();
@@ -96,7 +96,7 @@ public class StoreCredit extends GoogleCodeJam {
 	}
 	
 	@Override
-	public void formatUseCases(List<String> fileData, int noOfLinesPerGroup){
+	public void formatUseCases(List<String> fileData, int noOfLinesPerUseCase){
 		
 		boolean caseCountFlag = false;
 		
@@ -111,7 +111,7 @@ public class StoreCredit extends GoogleCodeJam {
 				
 				scd = new StoreCreditDomain();
 				
-				for(int i=0;i<noOfLinesPerGroup;i++){
+				for(int i=0;i<noOfLinesPerUseCase;i++){
 					
 					switch (i){
 						
