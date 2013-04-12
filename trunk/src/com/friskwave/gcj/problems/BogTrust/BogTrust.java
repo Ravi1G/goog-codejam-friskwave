@@ -2,6 +2,8 @@ package com.friskwave.gcj.problems.BogTrust;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 
@@ -15,7 +17,7 @@ import com.friskwave.utils.LoggerUtil;
  * @desc This is a solution to google code jam problem.
  * The problem definition URL is https://code.google.com/codejam/contest/975485/dashboard#s=p0
  */
-class BogTrust extends GoogleCodeJam{
+public class BogTrust extends GoogleCodeJam{
 	
 	private static final Logger LOG = LoggerUtil.getInstance();
 	
@@ -92,9 +94,27 @@ class BogTrust extends GoogleCodeJam{
 		
 		int caseNumber = ((BogTrustDomain) caseData).getCaseNumber();
 		int caseItemCount = ((BogTrustDomain) caseData).getCaseItemCount();
+		int caseSolution = 0;
 		String caseDataString = ((BogTrustDomain) caseData).getCaseData();
 		String[] caseDataItems = ((BogTrustDomain) caseData).getCaseItems();
 		
-		return "Case " + caseNumber + "#: ";
+		// regEx Pattern
+		String oRegExPattern = "O";
+		String bRegExPattern = "B";
+		
+		// Pattern Object
+		Pattern oCP = Pattern.compile(oRegExPattern);
+		Pattern bCP = Pattern.compile(bRegExPattern);
+		
+		// matcher object
+		Matcher oM = oCP.matcher(caseDataString);
+		Matcher bM = bCP.matcher(caseDataString);
+		
+		System.out.println(oM.toString());
+		
+		//int oChkPoints[]
+		// TODO actual solution to the problem
+		
+		return "Case #" + caseNumber + ": " + caseSolution;
 	}
 }

@@ -56,7 +56,7 @@ public class ReverseWords extends GoogleCodeJam {
 			}
 		}
 		
-		return "Case " + rwd.getCaseNumber() + "#: " + outputString.toString();
+		return "Case #" + rwd.getCaseNumber() + ": " + outputString.toString();
 	}
 
 	@Override

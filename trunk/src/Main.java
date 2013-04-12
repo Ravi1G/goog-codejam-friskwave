@@ -1,6 +1,6 @@
 import org.apache.log4j.Logger;
 
-import com.friskwave.gcj.problems.reversewords.ReverseWords;
+import com.friskwave.gcj.problems.BogTrust.BogTrust;
 import com.friskwave.gcj.utils.ApplicationConstants;
 import com.friskwave.utils.LoggerUtil;
 
@@ -16,8 +16,8 @@ public class Main {
 		LOG.info("Execution of code to compute soluation for GoogleCodeJam problem starts");
 		
 		// compute output by calling appropriate class object function
-		ReverseWords reverseWordsSmall = new ReverseWords();
-		ReverseWords reverseWordsLarge = new ReverseWords(ApplicationConstants.defaultLargeInputFilePath, ApplicationConstants.defaultLargeOutputFilePath);
+		BogTrust smallDataset = new BogTrust(ApplicationConstants.defaultSmallInputFilePath, ApplicationConstants.defaultSmallOutputFilePath);
+		BogTrust largeDataset = new BogTrust(ApplicationConstants.defaultLargeInputFilePath, ApplicationConstants.defaultLargeOutputFilePath);
 		
 		LOG.info("Execution of code to compute soluation for GoogleCodeJam problem ends");
 	}

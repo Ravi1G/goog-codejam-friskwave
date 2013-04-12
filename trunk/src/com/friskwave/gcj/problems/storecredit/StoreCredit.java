@@ -91,8 +91,8 @@ public class StoreCredit extends GoogleCodeJam {
 			}
 		}
 		
-		if(outputObject1.getItemIndex() > outputObject2.getItemIndex())return "Case " + caseNumber + "#: " + outputObject2.getItemIndex() + " " + outputObject1.getItemIndex();
-		else return "Case " + caseNumber + "#: " + outputObject1.getItemIndex() + " " + outputObject2.getItemIndex();
+		if(outputObject1.getItemIndex() > outputObject2.getItemIndex())return "Case #" + caseNumber + ": " + outputObject2.getItemIndex() + " " + outputObject1.getItemIndex();
+		else return "Case #" + caseNumber + ": " + outputObject1.getItemIndex() + " " + outputObject2.getItemIndex();
 	}
 	
 	@Override
