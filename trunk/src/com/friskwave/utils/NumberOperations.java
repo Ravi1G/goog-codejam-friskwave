@@ -10,7 +10,7 @@ import java.util.HashMap;
  */
 public class NumberOperations{
 	
-	public long HCF(long p, long q){
+	public static final long HCF(long p, long q){
 		
 		if (q == 0) {
 			return p;
@@ -19,7 +19,7 @@ public class NumberOperations{
 		return HCF(q, p % q);
 	}
 	
-	public HashMap<Integer,Long> getPrimeFactors(long number){
+	public static final HashMap<Integer,Long> getPrimeFactors(long number){
 		
 		long n = number;
 		
@@ -34,5 +34,10 @@ public class NumberOperations{
 		}
 		
 		return factors;
+	}
+	
+	public static final long convertToDecimal(String value, int base){
+		
+		return 0;
 	}
 }

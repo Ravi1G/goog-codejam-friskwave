@@ -29,7 +29,7 @@ public class ApplicationConstants {
 		}
 		catch(Exception IOException){
 			
-			LOG.error("IO exception - This is most likely because the we were not able to getch the path of the current directory to set applicationBasePath " + IOException);
+			LOG.error("IO exception - This is most likely to occur because we were not able to fetch the path of the current directory to set applicationBasePath " + IOException);
 		}
 	}
 }
