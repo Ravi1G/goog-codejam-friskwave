@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 
 import com.friskwave.thoughtworks.MerchantsGuide.domains.StrangeLanguage;
 import com.friskwave.thoughtworks.utils.FileOperations;
-import com.friskwave.thoughtworks.utils.NumberOperations;
+import com.friskwave.utils.NumberOperations;
 import com.friskwave.utils.LoggerUtil;
 
 /**
@@ -90,7 +90,7 @@ public class MerchantsGuide {
 				else romanRepOfStrangeLanguage.append(easyInfoAccessObject.get(questionInQuestionArr[k]).getRomanNotation());
 			}
 			
-			caseOutput = caseMultiplicationFactor * NumberOperations.convertRomanToArabic(romanRepOfStrangeLanguage.toString());
+			caseOutput = caseMultiplicationFactor * NumberOperations.convertRomanToDecimal(romanRepOfStrangeLanguage.toString());
 			appendOutput(questionInQuestion.replace("?", "").trim() + " is " + caseOutput.toString(), creditFlag);
 		}
 		
@@ -147,7 +147,7 @@ public class MerchantsGuide {
 			else if(currentInput.matches(infoRegExPattern2)){
 				
 				sl.setAlienNotation(questionArr[0].trim());
-				sl.setArabicValue(NumberOperations.convertRomanToArabic(questionArr[1].trim()));
+				sl.setArabicValue(NumberOperations.convertRomanToDecimal(questionArr[1].trim()));
 				sl.setRomanNotation(questionArr[1].trim());
 				information.add(sl);
 				easyInfoAccessObject.put(questionArr[0].trim(), sl);
@@ -184,7 +184,7 @@ public class MerchantsGuide {
 			}
 			
 			sl.setAlienNotation(indetifierArr[indetifierArr.length - 1]);
-			sl.setArabicValue(Integer.parseInt(valueArr[0])/(NumberOperations.convertRomanToArabic(romanNotation)));
+			sl.setArabicValue(Integer.parseInt(valueArr[0])/(NumberOperations.convertRomanToDecimal(romanNotation)));
 			sl.setUnitForValue("Credits");
 			
 			information.add(sl);
