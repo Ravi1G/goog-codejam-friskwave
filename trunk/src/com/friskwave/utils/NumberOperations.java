@@ -8,9 +8,9 @@ import java.util.HashMap;
  * @desc This class contains generic implementations for certain mathematical
  * operations that might come of use in multiple places.
  */
-public class NumberOperations{
+public class NumberOperations {
 	
-	public static final long HCF(long p, long q){
+	public static final long HCF(long p, long q) {
 		
 		if (q == 0) {
 			return p;
@@ -19,7 +19,7 @@ public class NumberOperations{
 		return HCF(q, p % q);
 	}
 	
-	public static final HashMap<Integer,Long> getPrimeFactors(long number){
+	public static final HashMap<Integer,Long> getPrimeFactors(long number) {
 		
 		long n = number;
 		
@@ -36,8 +36,65 @@ public class NumberOperations{
 		return factors;
 	}
 	
-	public static final long convertToDecimal(String value, int base){
+	public static Double convertRomanToDecimal(String romanValue) {
 		
-		return 0;
+		Double arabicValue = 0.0;
+		
+		romanValue = romanValue.toUpperCase();
+		
+		for(int x = 0;x<romanValue.length();x++) {
+		
+			switch(romanValue.charAt(x)) {
+				
+				case 'M':
+					arabicValue += 1000;
+					break;
+				
+				case 'D':
+					arabicValue += 500;
+					break;
+				
+				case 'C':
+					arabicValue += 100;
+					break;
+				
+				case 'L':
+					arabicValue += 50;
+					break;
+				
+				case 'X':
+					arabicValue += 10;
+					break;
+				
+				case 'V':
+					arabicValue += 5;
+					break;
+				
+				case 'I':
+					arabicValue += 1;
+					break;
+			}
+		}
+		
+		if(romanValue.contains("IV")) {
+			arabicValue-=2;
+		}
+		if(romanValue.contains("IX")) {
+			arabicValue-=2;
+		}
+		if(romanValue.contains("XL")) {
+			arabicValue-=20;
+		}
+		if(romanValue.contains("XC")) {
+			arabicValue-=20;
+		}
+		if(romanValue.contains("CD")) {
+			arabicValue-=200;
+		}
+		if(romanValue.contains("CM")) {
+			arabicValue-=200;
+		}
+		
+		return arabicValue;
 	}
 }
